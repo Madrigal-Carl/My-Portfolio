@@ -6,15 +6,15 @@ const navigationSection = {
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contacts" }
-  ]
+    { name: "Contact", href: "#contacts" },
+  ],
 };
 
 const heroSection = {
   greeting: "Hello, Welcome",
   name: "I'm Carl Madrigal",
   bio: "I'm an aspiring developer, passionate about creating solutions through code. I'm building my skills and portfolio to contribute to impactful projects and grow in the tech world.",
-  image: "hero.png"
+  image: "hero.png",
 };
 
 const aboutSection = {
@@ -22,9 +22,9 @@ const aboutSection = {
   coloredTitle: "Me",
   paragraphs: [
     "I'm an aspiring developer focused on building a portfolio and refining my problem-solving skills. My goal is to contribute to impactful tech projects while expanding my knowledge in software development.",
-    "I learn independently through online courses and personal projects. In my free time, I enjoy gaming, movies, and exploring new tech trends."
+    "I learn independently through online courses and personal projects. In my free time, I enjoy gaming, movies, and exploring new tech trends.",
   ],
-  image: "about.png"
+  image: "about.png",
 };
 
 const skillsSection = {
@@ -37,21 +37,21 @@ const skillsSection = {
       name: "HTML & CSS",
       images: [{ src: "html.svg" }, { src: "css.svg" }],
       description:
-        "Core web technologies I started learning in my second year of college, gaining skills in creating structured, responsive designs."
+        "Core web technologies I started learning in my second year of college, gaining skills in creating structured, responsive designs.",
     },
     {
       name: "JavaScript",
       image: "javascript.svg",
       description:
-        "Introduced in my third year of college, where I learned to add interactivity and dynamic functionality to web applications."
+        "Introduced in my third year of college, where I learned to add interactivity and dynamic functionality to web applications.",
     },
     {
       name: "PHP",
       image: "php.svg",
       description:
-        "Started learning in my second year of college, focusing on server-side scripting to build dynamic and interactive websites."
-    }
-  ]
+        "Started learning in my second year of college, focusing on server-side scripting to build dynamic and interactive websites.",
+    },
+  ],
 };
 
 const projectsSection = {
@@ -64,21 +64,21 @@ const projectsSection = {
       name: "PCC-Alabkarbawan (Admin Side)",
       image: "PCC.png",
       description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate ipsum dicta tempore incidunt pariatur fugiat voluptates? Natus illo deserunt fuga placeat nesciunt id, dolorum modi nulla ad, aspernatur assumenda aliquid?"
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate ipsum dicta tempore incidunt pariatur fugiat voluptates? Natus illo deserunt fuga placeat nesciunt id, dolorum modi nulla ad, aspernatur assumenda aliquid?",
     },
     {
       name: "World's Hardest Game",
       image: "World's Hardest Game.png",
       description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate ipsum dicta tempore incidunt pariatur fugiat voluptates? Natus illo deserunt fuga placeat nesciunt id, dolorum modi nulla ad, aspernatur assumenda aliquid?"
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate ipsum dicta tempore incidunt pariatur fugiat voluptates? Natus illo deserunt fuga placeat nesciunt id, dolorum modi nulla ad, aspernatur assumenda aliquid?",
     },
     {
       name: "PharmArshie",
       image: "PharmArshie.png",
       description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate ipsum dicta tempore incidunt pariatur fugiat voluptates? Natus illo deserunt fuga placeat nesciunt id, dolorum modi nulla ad, aspernatur assumenda aliquid?"
-    }
-  ]
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate ipsum dicta tempore incidunt pariatur fugiat voluptates? Natus illo deserunt fuga placeat nesciunt id, dolorum modi nulla ad, aspernatur assumenda aliquid?",
+    },
+  ],
 };
 
 const contactsSection = {
@@ -89,8 +89,8 @@ const contactsSection = {
   contactInfo: [
     { name: "Address_", info: "Brgy. Dili, Gasan, Marinduque" },
     { name: "Phone_", info: "+63-963-178-7140" },
-    { name: "Email_", info: "carlsalido.madrigal@gmail.com" }
-  ]
+    { name: "Email_", info: "carlsalido.madrigal@gmail.com" },
+  ],
 };
 
 const footerSection = {
@@ -99,8 +99,8 @@ const footerSection = {
     { href: "#", image: "twitter.svg" },
     { href: "#", image: "facebook.svg" },
     { href: "#", image: "instagram.svg" },
-    { href: "#", image: "youtube.svg" }
-  ]
+    { href: "#", image: "youtube.svg" },
+  ],
 };
 
 const startBtn = document.getElementById("startBtn");
@@ -148,14 +148,14 @@ function showHero() {
   header.style.display = "flex";
 
   header.innerHTML = `
-    <div class="detail">
-        <p class="ycolor">${heroSection.greeting}</p>
-        <h1>${heroSection.name}</h1>
-        <p class="bcolor">${heroSection.bio}</p>
-        <button id="showAboutMe" class="button-anim">Learn More</button>
-    </div>
-    <img src="images/${heroSection.image}" alt="${heroSection.image}">
-`;
+      <div class="detail">
+          <p class="ycolor">${heroSection.greeting}</p>
+          <h1>${heroSection.name}</h1>
+          <p class="bcolor">${heroSection.bio}</p>
+          <button id="showAboutMe" class="button-anim">Learn More</button>
+      </div>
+      <img src="images/${heroSection.image}" alt="${heroSection.image}">
+  `;
   const showAbout = document.getElementById("showAboutMe");
 
   showAbout.onclick = function () {
@@ -173,14 +173,14 @@ function showAboutMe() {
   about.style.display = "flex";
 
   about.innerHTML = `
-    <img src="images/${aboutSection.image}" alt="${aboutSection.image}">
-    <div class="detail">
-        <h1 class="title">${aboutSection.title} <span>${aboutSection.coloredTitle}</span></h1>
-        <p class="gcolor">${aboutSection.paragraphs[0]}\n\n
-            ${aboutSection.paragraphs[1]}</p>
-        <button id="showSkills" class="button-anim">Show Skills</button>
-    </div>
-`;
+      <img src="images/${aboutSection.image}" alt="${aboutSection.image}">
+      <div class="detail">
+          <h1 class="title">${aboutSection.title} <span>${aboutSection.coloredTitle}</span></h1>
+          <p class="gcolor">${aboutSection.paragraphs[0]}\n\n
+              ${aboutSection.paragraphs[1]}</p>
+          <button id="showSkills" class="button-anim">Show Skills</button>
+      </div>
+  `;
   const showSkill = document.getElementById("showSkills");
   showSkill.onclick = function () {
     if (showSkill.textContent == "Show Skills") {
@@ -197,13 +197,13 @@ function showSkills() {
   skill.style.display = "flex";
 
   skill.innerHTML = `
-    <div class="skill-intro">
-        <h1 class="title">${skillsSection.title} <span>${skillsSection.coloredTitle}</span></h1>
-        <p class="gcolor">${skillsSection.intro}</p>
-    </div>
-        
-    <div class="skill-container"></div>
-`;
+      <div class="skill-intro">
+          <h1 class="title">${skillsSection.title} <span>${skillsSection.coloredTitle}</span></h1>
+          <p class="gcolor">${skillsSection.intro}</p>
+      </div>
+          
+      <div class="skill-container"></div>
+  `;
 
   const container = document.querySelector(".skill-container");
 
@@ -230,28 +230,28 @@ function showSkills() {
 
     skillCard.appendChild(imageContainer);
     skillCard.innerHTML += `
-        <h3>${element.name}</h3>
-        <p class="gcolor">${element.description}</p>
-    `;
+          <h3>${element.name}</h3>
+          <p class="gcolor">${element.description}</p>
+      `;
 
     container.appendChild(skillCard);
   });
   // <button id="showProjects" class="button-anim">Show Projects</button>
 
   skill.innerHTML += `
-    <div class="scroll-down-container">
-        <a class="scroll-down-animation" id="showProjects">
-            <div class="scroll-down-animation-box">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="50px">
-                    <path d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M11.9997 13.1716L7.04996 8.22186L5.63574 9.63607L11.9997 16L18.3637 9.63607L16.9495 8.22186L11.9997 13.1716Z" fill="#EAB308">
-                    </path>
-                </svg>
-            </div>
-            <span class="scroll-down-animation-text">Show Projects</span>
-        </a>
-    </div>
-`;
+      <div class="scroll-down-container">
+          <a class="scroll-down-animation" id="showProjects">
+              <div class="scroll-down-animation-box">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="50px">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M11.9997 13.1716L7.04996 8.22186L5.63574 9.63607L11.9997 16L18.3637 9.63607L16.9495 8.22186L11.9997 13.1716Z" fill="#EAB308">
+                      </path>
+                  </svg>
+              </div>
+              <span class="scroll-down-animation-text">Show Projects</span>
+          </a>
+      </div>
+  `;
   const showProject = document.getElementById("showProjects");
   showProject.onclick = function () {
     showProject.href = "#projects";
@@ -266,12 +266,12 @@ function showProjects() {
   projects.style.display = "flex";
 
   projects.innerHTML = `
-    <div class="project-intro">
-        <h1 class="title">${projectsSection.title} <span>${projectsSection.coloredTitle}</span></h1>
-        <p class="lgcolor">${projectsSection.intro}</p>
-    </div>
-    <div class="project-container"></div>
-`;
+      <div class="project-intro">
+          <h1 class="title">${projectsSection.title} <span>${projectsSection.coloredTitle}</span></h1>
+          <p class="lgcolor">${projectsSection.intro}</p>
+      </div>
+      <div class="project-container"></div>
+  `;
 
   const container = document.querySelector(".project-container");
   projectsSection.projects.forEach((element) => {
@@ -279,30 +279,30 @@ function showProjects() {
     div.className = "project-card";
 
     div.innerHTML = `
-        <img src="images/${element.image}" alt="${element.image}">
-        <div class="project-description">
-            <h3>${element.name}</h3>
-            <p class="gcolor">${element.description}</p>
-        </div>
-    `;
+          <img src="images/${element.image}" alt="${element.image}">
+          <div class="project-description">
+              <h3>${element.name}</h3>
+              <p class="gcolor">${element.description}</p>
+          </div>
+      `;
 
     container.appendChild(div);
   });
 
   container.innerHTML += `
-    <div class="scroll-down-container">
-        <a class="scroll-down-animation" id="showContact">
-            <div class="scroll-down-animation-box">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="50px">
-                    <path d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M11.9997 13.1716L7.04996 8.22186L5.63574 9.63607L11.9997 16L18.3637 9.63607L16.9495 8.22186L11.9997 13.1716Z" fill="#EAB308">
-                    </path>
-                </svg>
-            </div>
-            <span class="scroll-down-animation-text">Show Contact</span>
-        </a>
-    </div>
-`;
+      <div class="scroll-down-container">
+          <a class="scroll-down-animation" id="showContact">
+              <div class="scroll-down-animation-box">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="50px">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M11.9997 13.1716L7.04996 8.22186L5.63574 9.63607L11.9997 16L18.3637 9.63607L16.9495 8.22186L11.9997 13.1716Z" fill="#EAB308">
+                      </path>
+                  </svg>
+              </div>
+              <span class="scroll-down-animation-text">Show Contact</span>
+          </a>
+      </div>
+  `;
   const showContact = document.getElementById("showContact");
   showContact.onclick = function () {
     showContact.href = "#contacts";
@@ -317,15 +317,15 @@ function showContacts() {
   contacts.style.display = "flex";
 
   contacts.innerHTML = `
-    <div class="contact-intro">
-        <h1 class="title">${contactsSection.title} <span>${contactsSection.coloredTitle}</span></h1>
-        <p class="lgcolor">${contactsSection.intro}</p>
-    </div>
+      <div class="contact-intro">
+          <h1 class="title">${contactsSection.title} <span>${contactsSection.coloredTitle}</span></h1>
+          <p class="lgcolor">${contactsSection.intro}</p>
+      </div>
 
-    <div class="contact-container">
-    
-    </div>
-`;
+      <div class="contact-container">
+      
+      </div>
+  `;
 
   const container = document.querySelector(".contact-container");
 
@@ -333,17 +333,17 @@ function showContacts() {
   div.className = "contact-info";
   contactsSection.contactInfo.forEach((element) => {
     div.innerHTML += `
-        <p class="dwhite"><span>${element.name}</span>${element.info}</p>
-    `;
+          <p class="dwhite"><span>${element.name}</span>${element.info}</p>
+      `;
   });
 
   const form = document.createElement("div");
   form.className = "contact-form";
   form.innerHTML = `
-    <input class="input-name" type="text" placeholder="Name">
-    <textarea class="input-message" placeholder="Message..." id="message"></textarea>
-    <button class="button-no-anim">Contact us</button>
-`;
+      <input class="input-name" type="text" placeholder="Name">
+      <textarea class="input-message" placeholder="Message..." id="message"></textarea>
+      <button class="button-no-anim">Contact us</button>
+  `;
   container.appendChild(div);
   container.appendChild(form);
 
@@ -355,9 +355,9 @@ function showFooter() {
   footer.style.display = "flex";
 
   footer.innerHTML = `
-    <p class="lgcolor">${footerSection.developedBy}</p>
-    <div class="footer-link"></div>
-`;
+      <p class="lgcolor">${footerSection.developedBy}</p>
+      <div class="footer-link"></div>
+  `;
 
   const links = document.querySelector(".footer-link");
   footerSection.socialLinks.forEach((element) => {
@@ -365,8 +365,8 @@ function showFooter() {
     link.href = element.href;
 
     link.innerHTML = `
-        <img src="svg/${element.image}" alt="${element.image}">
-    `;
+          <img src="svg/${element.image}" alt="${element.image}">
+      `;
 
     links.appendChild(link);
   });
