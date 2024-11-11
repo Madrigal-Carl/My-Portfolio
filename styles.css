@@ -1,0 +1,462 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+span {
+  font-weight: bold;
+  color: white;
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+span,
+h4,
+.ycolor {
+  color: #eab308;
+}
+
+.lgcolor {
+  color: #9ca3af;
+}
+
+.gcolor {
+  color: #6b7280;
+}
+
+.dwhite {
+  color: #f3f4f6;
+}
+
+.button-anim {
+  border: none;
+  background-color: #eab308;
+}
+
+.button-anim {
+  padding: 0.6rem;
+  border: none;
+  outline: none;
+  background-color: #eab308;
+  border-radius: 5x;
+  width: 150px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+}
+
+.button-anim:hover {
+  transform: translateY(-6px);
+}
+
+.button-no-anim {
+  padding: 0.6rem;
+  border: none;
+  background-color: #eab308;
+  border-radius: 5x;
+  width: 150px;
+  cursor: pointer;
+}
+
+.title,
+.title span {
+  font-size: 2.5rem;
+}
+
+.detail h1,
+.about h1,
+.about span {
+  font-size: 2.5rem;
+}
+
+header img,
+.about img {
+  height: 380px;
+}
+
+.projects,
+.skills,
+.contacts,
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 10rem;
+  gap: 4rem;
+}
+
+.skill-intro,
+.project-intro,
+.contact-intro {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 0.5rem;
+  width: 40%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Start of Arrow Down Animation */
+.scroll-down-container {
+  cursor: pointer;
+  text-align: center;
+  width: fit-content;
+}
+
+.scroll-down-animation-text {
+  color: #eab308;
+}
+
+.scroll-down-container:hover .scroll-down-animation-box,
+.scroll-down-container:hover .scroll-down-animation-text {
+  animation: scroll-down 3s infinite;
+}
+
+@keyframes scroll-down {
+  0%,
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+
+  35% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+}
+/* End of Arrow Down Animation */
+
+body {
+  width: 100%;
+  height: 100dvh;
+  background-color: #020617;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Start of Navigation Section */
+nav {
+  padding: 1rem 10rem;
+}
+
+.navigation-title,
+.navigation-title span {
+  font-size: 1.5rem;
+}
+
+.navigation-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navigation-links a {
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+.navigation-links a::before {
+  margin-left: auto;
+}
+
+.navigation-links a::after,
+.navigation-links a::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #eab308;
+  display: block;
+  transition: 0.5s;
+}
+
+.navigation-links a:hover::after,
+.navigation-links a:hover::before {
+  width: 100%;
+}
+/* End of Navigation Section */
+
+/* Start of Hero Section */
+header {
+  background-color: #111827;
+  min-height: 90dvh;
+  padding: 5rem 10rem;
+  display: flex;
+  gap: 10rem;
+  align-items: center;
+}
+
+.detail {
+  display: block;
+  text-align: left;
+}
+
+.detail .bcolor {
+  color: #395183;
+}
+
+.detail .ycolor {
+  margin-bottom: 15px;
+}
+
+.detail p {
+  margin: 40px 0;
+}
+/* End of Hero Section */
+
+/* Start of About Me Section */
+.about {
+  padding: 8rem 10rem;
+  display: flex;
+  gap: 10rem;
+  align-items: center;
+}
+
+.about .detail p {
+  margin: 3rem 0;
+}
+
+/* End of About Me Section */
+
+/* Start of Skills Section */
+.skills {
+  background-color: #111827;
+  align-items: center;
+  gap: 3rem;
+}
+
+.skill-intro {
+  align-self: flex-start;
+}
+
+.skill-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #020617;
+  width: 100%;
+  gap: 1.5rem;
+  padding: 2rem;
+  align-items: center;
+  aspect-ratio: 5/1;
+}
+
+.skill-card img {
+  width: 50px;
+}
+
+.skill-card .d-image {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.skill-card p {
+  text-align: center;
+  padding: 1.5rem;
+}
+/* End of Skills Section */
+
+/* Start of Project Section */
+.projects {
+  align-items: center;
+}
+
+.project-intro {
+  text-align: center;
+  width: 50%;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.project-card img {
+  width: 300px;
+  border-radius: 0.5rem;
+}
+
+.project-card {
+  display: flex;
+  gap: 2rem;
+}
+
+.project-description {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  gap: 1rem;
+}
+/* End of Project Section */
+
+/* Start of Contact Section */
+.contacts {
+  background-color: #191d28;
+  padding: 4rem 10rem;
+  gap: 3rem;
+}
+
+.contact-intro {
+  width: 50%;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-name {
+  padding: 0.5rem;
+  width: 300px;
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+}
+
+.input-message {
+  padding: 0.5rem;
+  width: 400px;
+  height: 100px;
+  resize: none;
+  border-radius: 4px;
+  border: none;
+}
+/* End of Contact Section */
+
+/* Start of Footer Section */
+footer {
+  padding: 2rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer img {
+  width: 20px;
+}
+
+.footer-link {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+/* End of Footer Section */
+
+/* Hide All Section */
+nav,
+header,
+.about,
+.skills,
+.projects,
+.contacts,
+footer {
+  display: none;
+}
+
+/* Start Button */
+#startBtn {
+  font-size: 17px;
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  color: #ffedd3;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#startBtn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #eab308;
+  transition: 0.5s ease;
+}
+
+#startBtn:hover {
+  color: #020617;
+  transition-delay: 0.5s;
+}
+
+#startBtn:hover::before {
+  width: 100%;
+}
+
+#startBtn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #eab308;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+#startBtn:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
