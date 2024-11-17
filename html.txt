@@ -64,37 +64,37 @@ const projectsSection = {
       name: "PCC-Alabkarbawan (Admin Side)",
       image: "PCC.png",
       description:
-        "PCC-Alabkarbawan (Admin Side) is a second-year college project developed using Laravel with PHP, HTML, CSS, and basic JavaScript. I handled backend development, while Dave Geroleo worked on the frontend."
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate ipsum dicta tempore incidunt pariatur fugiat voluptates? Natus illo deserunt fuga placeat nesciunt id, dolorum modi nulla ad, aspernatur assumenda aliquid?"
     },
     {
       name: "World's Hardest Game",
       image: "World's Hardest Game.png",
       description:
-        "Project World's Hardest is a college project inspired by World's Hardest Game and Snubby Land, featuring a unique game style. Developed in C# using Unity, it showcases creative gameplay and custom design."
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate ipsum dicta tempore incidunt pariatur fugiat voluptates? Natus illo deserunt fuga placeat nesciunt id, dolorum modi nulla ad, aspernatur assumenda aliquid?"
     },
     {
       name: "PharmArshie",
       image: "PharmArshie.png",
       description:
-        "PharmArshie is a project built with HTML and CSS, featuring a responsive design. It was also developed as a hybrid app, embedding the web version within it for seamless functionality."
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate ipsum dicta tempore incidunt pariatur fugiat voluptates? Natus illo deserunt fuga placeat nesciunt id, dolorum modi nulla ad, aspernatur assumenda aliquid?"
     },
     {
-      name: "Recipe Page",
+      name: "Recipe Page Activity",
       image: "Recipe Page.png",
       description:
-        "Recipe Page is an activity completed this year aimed at enhancing HTML and CSS skills. It involved creating a visually appealing and functional webpage that displays recipes, focusing on responsive design and effective styling techniques."
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate ipsum dicta tempore incidunt pariatur fugiat voluptates? Natus illo deserunt fuga placeat nesciunt id, dolorum modi nulla ad, aspernatur assumenda aliquid?"
     },
     {
-      name: "Landing Page",
-      image: "Landing Page Activity.png",
+      name: "World's Hardest Game",
+      image: "World's Hardest Game.png",
       description:
-        "Landing Page is an activity completed this year to enhance HTML and CSS skills. It focused on creating a responsive layout, showcasing effective design principles for modern web pages."
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate ipsum dicta tempore incidunt pariatur fugiat voluptates? Natus illo deserunt fuga placeat nesciunt id, dolorum modi nulla ad, aspernatur assumenda aliquid?"
     },
     {
-      name: "My Portfolio",
-      image: "My Portfolio.png",
+      name: "World's Hardest Game",
+      image: "World's Hardest Game.png",
       description:
-        "Portfolio is a project created during the 1st semester this year for Web Programming 1. Built with HTML, CSS, and JavaScript, it features dynamic rendering to showcase skills and projects in an interactive layout."
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate ipsum dicta tempore incidunt pariatur fugiat voluptates? Natus illo deserunt fuga placeat nesciunt id, dolorum modi nulla ad, aspernatur assumenda aliquid?"
     }
   ]
 };
@@ -121,10 +121,8 @@ const footerSection = {
   ]
 };
 
-
 // Start
 const startBtn = document.getElementById("startBtn");
-let count = 0;
 
 startBtn.onclick = function () {
   startBtn.style.display = "none";
@@ -135,15 +133,14 @@ startBtn.onclick = function () {
 // Navigation and Hero Section
 function showNavigation() {
   const navigation = document.getElementById("navigation");
-  navigation.style.display = "block";
+  navigation.style.display = "flex";
 
   const title = document.createElement("h2");
-  title.id = "navTitle";
-  title.className="color-b cursor";
-  title.innerHTML = `${navigationSection.title}<span id="navSpan" class="default-span">${navigationSection.coloredTitle}</span>.`;
+  title.className = "navigation-title cursor";
+  title.innerHTML = `${navigationSection.title}<span>${navigationSection.coloredTitle}</span>.`;
 
   const links = document.createElement("div");
-  links.id = "navi-links";
+  links.className = "navigation-links nav-animation";
 
   navigation.appendChild(title);
   navigation.appendChild(links);
@@ -154,12 +151,12 @@ function showNavigation() {
 
 function addLink(index) {
   const navigation = document.getElementById("navigation");
-  const links = document.getElementById("navi-links");
+  const links = document.querySelector(".navigation-links");
 
   const link = document.createElement("a");
-  link.className = "rightToLeft-anim";
   link.href = navigationSection.links[index].href;
   link.textContent = navigationSection.links[index].name;
+  link.className = "slidetoLeft";
 
   links.appendChild(link);
 
@@ -168,100 +165,61 @@ function addLink(index) {
 
 function showHero() {
   const header = document.getElementById("hero");
-  header.style.display = "block";
+  header.style.display = "flex";
 
   header.innerHTML = `
-    <div id="heroDetailContainer">
-        <p id="heroGreeting">${heroSection.greeting}</p>
-        <h1 class="color-b" id="heroName">${heroSection.name}</h1>
-        <p id="heroDescription">${heroSection.bio}</p>
-        <button id="showAboutMe">Learn More</button>
+    <div class="detail slidetoRight">
+        <p class="ycolor">${heroSection.greeting}</p>
+        <h1>${heroSection.name}</h1>
+        <p class="bcolor">${heroSection.bio}</p>
+        <button id="showAboutMe" class="button-anim cursor">Learn More</button>
     </div>
-    <img class="downToUp-anim" src="images/${heroSection.image}" alt="${heroSection.image}">
+    <img class="slideup" src="images/${heroSection.image}" alt="${heroSection.image}">
 `;
   const showAbout = document.getElementById("showAboutMe");
+
   showAbout.onclick = function () {
-    location.href = "#about";
-    if (count == 0) {
+    if (showAbout.textContent == "Learn More") {
+      location.href = "#about";
+      showAbout.textContent = "Contact us";
       addLink(1);
       showAboutMe();
-      count++;
     }
   };
 }
 
 
-// About Me Section
-function showAboutMe() {
-  //Styles changes
-  const navTitle = document.getElementById("navTitle");
-  navTitle.className = "navigation-title color-b cursor";
-  const navSpan = document.getElementById("navSpan");
-  navSpan.className = "";
-  const naviLinks = document.getElementById("navi-links");
-  naviLinks.className = "navigation-links color-b";
-  const heroDetailContainer = document.getElementById("heroDetailContainer");
-  heroDetailContainer.className = "detail leftToRight-anim";
-  const heroGreeting = document.getElementById("heroGreeting");
-  heroGreeting.className = "ycolor";
-  const heroName = document.getElementById("heroName");
-  heroName.className = "color-b";
-  const heroDescription = document.getElementById("heroDescription");
-  heroDescription.className = "bcolor";
 
+function showAboutMe() {
   const about = document.getElementById("about");
-  about.style.display = "block";
+  about.style.display = "flex";
 
   about.innerHTML = `
-    <img class="leftToRight-anim" src="images/${aboutSection.image}" alt="${aboutSection.image}">
-    <div class=" detail rightToLeft-anim">
-        <h1 id="aboutTitle" class="title color-b">${aboutSection.title} <span>${aboutSection.coloredTitle}</span></h1>
+    <img class="slidetoRight" src="images/${aboutSection.image}" alt="${aboutSection.image}">
+    <div class="detail slidetoLeft">
+        <h1 class="title">${aboutSection.title} <span>${aboutSection.coloredTitle}</span></h1>
         <p class="gcolor">${aboutSection.paragraphs[0]}\n\n
             ${aboutSection.paragraphs[1]}</p>
-        <button id="showSkills">Learn More</button>
+        <button id="showSkills" class="button-anim cursor">Show Skills</button>
     </div>
 `;
   const showSkill = document.getElementById("showSkills");
   showSkill.onclick = function () {
-    location.href = "#skills";
-    if (count == 1) {
+    if (showSkill.textContent == "Show Skills") {
+      location.href = "#skills";
+      showSkill.textContent = "Contact us";
       addLink(2);
       showSkills();
-      count++;
     }
   };
 }
 
 function showSkills() {
-  //Change styles
-  const navigation = document.getElementById("navigation");
-  const header = document.getElementById("hero");
-  const about = document.getElementById("about");
-  navigation.classList.add("d-background");
-  header.classList.add("l-background");
-  about.classList.add("d-background");
-
-  const naviLinks = document.getElementById("navi-links");
-  naviLinks.classList.remove("color-b");
-  naviLinks.classList.add("no-underline");
-  const navTitle = document.getElementById("navTitle");
-  navTitle.classList.add("color-w");
-  const heroName = document.getElementById("heroName");
-  heroName.className = "color-w";
-  const aboutTitle = document.getElementById("aboutTitle");
-  aboutTitle.classList.remove("color-b");
-  
-  const aboutBtn = document.getElementById("showAboutMe");
-  aboutBtn.className = "button-style cursor";
-  const skillBtn = document.getElementById("showSkills");
-  skillBtn.className = "button-style cursor";
-
   const skill = document.getElementById("skills");
-  skill.style.display = "block";
-  skill.classList.add("l-background");
+  skill.style.display = "flex";
 
   skill.innerHTML = `
-    <div class="skill-intro leftToRight-anim">
+    <div class="skill-intro showUp">
         <h1 class="title">${skillsSection.title} <span>${skillsSection.coloredTitle}</span></h1>
         <p class="gcolor">${skillsSection.intro}</p>
     </div>
@@ -273,7 +231,7 @@ function showSkills() {
 
   skillsSection.skills.forEach((element) => {
     const skillCard = document.createElement("div");
-    skillCard.className = "skill-card downToUp-anim";
+    skillCard.className = "skill-card skill-card-hover slideup";
 
     const imageContainer = document.createElement("div");
     imageContainer.className = "d-image";
@@ -304,13 +262,12 @@ function showSkills() {
   skill.innerHTML += `
     <div class="scroll-down-container">
         <a class="scroll-down-animation" id="showProjects">
-            <div class="a-center" id="arrowProject">
+            <div class="scroll-down-animation-box animated-arrow">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="50px">
                     <path d="M0 0h24v24H0z" fill="none"></path>
                     <path d="M11.9997 13.1716L7.04996 8.22186L5.63574 9.63607L11.9997 16L18.3637 9.63607L16.9495 8.22186L11.9997 13.1716Z" fill="#EAB308">
                     </path>
                 </svg>
-                <span id="textLayout&Hover-remove">Improve Layout & Add Hover</span>
             </div>
         </a>
     </div>
@@ -318,44 +275,18 @@ function showSkills() {
   const showProject = document.getElementById("showProjects");
   showProject.onclick = function () {
     showProject.href = "#projects";
-    if (count == 2) {
-      addLink(3);
-      showProjects();
-      count++;
-    }
+    showProject.style.display = "none";
+    addLink(3);
+    showProjects();
   };
 }
 
 function showProjects() {
-  //Change styles
-  const navigation = document.getElementById("navigation");
-  navigation.style.display = "flex";
-  const header = document.getElementById("hero");
-  header.style.display = "flex";
-  const about = document.getElementById("about");
-  about.style.display = "flex";
-  const skill = document.getElementById("skills");
-  skill.style.display = "flex";
-  const text = document.getElementById("textLayout&Hover-remove");
-  text.style.display = "none";
-
-  const links = document.getElementById("navi-links");
-  links.classList.add("nav-animation");
-
- document.querySelectorAll(".skill-card").forEach((skillCard) => {
-  skillCard.classList.add("skill-card-hover");
-});
-  const aboutBtn = document.getElementById("showAboutMe");
-  aboutBtn.classList.add("button-anim");
-  const skillBtn = document.getElementById("showSkills");
-  skillBtn.classList.add("button-anim");
-
   const projects = document.getElementById("projects");
   projects.style.display = "flex";
-  projects.classList.add("d-background");
 
   projects.innerHTML = `
-    <div class="project-intro downToUp-anim">
+    <div class="project-intro showUp">
         <h1 class="title">${projectsSection.title} <span>${projectsSection.coloredTitle}</span></h1>
         <p class="lgcolor">${projectsSection.intro}</p>
     </div>
@@ -365,10 +296,10 @@ function showProjects() {
   const container = document.querySelector(".project-container");
   projectsSection.projects.forEach((element) => {
     const div = document.createElement("div");
-    div.className = "project-card cursor downToUp-anim";
+    div.className = "project-card cursor";
 
     div.innerHTML = `
-        <div class="card">
+        <div class="card expand">
             <img src="images/${element.image}" alt="${element.image}">
             <div class="card_content">
                 <p class="card_title">${element.name}</p>
@@ -383,54 +314,32 @@ function showProjects() {
   projects.innerHTML += `
     <div class="scroll-down-container">
         <a class="scroll-down-animation" id="showContact">
-            <div class="a-center" id="arrowContact">
+            <div class="scroll-down-animation-box animated-arrow">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="50px">
                     <path d="M0 0h24v24H0z" fill="none"></path>
                     <path d="M11.9997 13.1716L7.04996 8.22186L5.63574 9.63607L11.9997 16L18.3637 9.63607L16.9495 8.22186L11.9997 13.1716Z" fill="#EAB308">
                     </path>
                 </svg>
-                <span id="textAnimation-remove">Add Animation</span>
             </div>
+            <span class="scroll-down-animation-text">Show Contact</span>
         </a>
     </div>
 `;
   const showContact = document.getElementById("showContact");
   showContact.onclick = function () {
     showContact.href = "#contacts";
-    if (count == 3) {
-      addLink(4);
-      showContacts();
-      count++;
-    }
+    showContact.style.display = "none";
+    addLink(4);
+    showContacts();
   };
 }
 
-
-function showContacts() { 
-  const text = document.getElementById("textAnimation-remove");
-  text.style.display = "none";
-  const proj = document.getElementById("arrowProject");
-  proj.classList.add("animated-arrow");
-  const contact = document.getElementById("arrowContact");
-  contact.classList.add("animated-arrow");
-
-  document.querySelectorAll(".leftToRight-anim").forEach((about) => {
-    about.classList.add("left-right-animation");
-  });
-
-  document.querySelectorAll(".rightToLeft-anim").forEach((about) => {
-    about.classList.add("right-left-animation");
-  });
-
-  document.querySelectorAll(".downToUp-anim").forEach((about) => {
-    about.classList.add("down-up-animation");
-  });
-
+function showContacts() {
   const contacts = document.getElementById("contacts");
   contacts.style.display = "flex";
 
   contacts.innerHTML = `
-    <div class="contact-intro left-right-animation">
+    <div class="contact-intro">
         <h1 class="title">${contactsSection.title} <span>${contactsSection.coloredTitle}</span></h1>
         <p class="lgcolor">${contactsSection.intro}</p>
     </div>
@@ -443,7 +352,7 @@ function showContacts() {
   const container = document.querySelector(".contact-container");
 
   const div = document.createElement("div");
-  div.className = "contact-info left-right-animation";
+  div.className = "contact-info";
   contactsSection.contactInfo.forEach((element) => {
     div.innerHTML += `
         <p class="dwhite"><span>${element.name}</span>${element.info}</p>
@@ -451,18 +360,14 @@ function showContacts() {
   });
 
   const form = document.createElement("div");
-  form.className = "contact-form right-left-animation";
+  form.className = "contact-form";
   form.innerHTML = `
     <input class="input-name" type="text" placeholder="Name">
     <textarea class="input-message" placeholder="Message..." id="message"></textarea>
-    <button class="button-style button-anim cursor">Contact us</button>
+    <button class="button-no-anim cursor">Contact us</button>
 `;
   container.appendChild(div);
   container.appendChild(form);
-
-  observeLeftToRightElements();
-  observeRightToLeftElements();
-  observeDownToUpElements();
 
   showFooter();
 }
@@ -470,7 +375,7 @@ function showContacts() {
 function showFooter() {
   const footer = document.getElementById("footer");
   footer.style.display = "flex";
-  footer.classList.add("d-background");
+  footer.className = "d-background";
 
   footer.innerHTML = `
     <p class="lgcolor">${footerSection.developedBy}</p>
@@ -488,52 +393,4 @@ function showFooter() {
 
     links.appendChild(link);
   });
-}
-
-
-
-
-const duobserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("down-to-up-animate");
-    } else {
-      entry.target.classList.remove("down-to-up-animate");
-    }
-  });
-});
-
-function observeDownToUpElements() {
-  const downToUpElements = document.querySelectorAll(".down-up-animation");
-  downToUpElements.forEach((el) => duobserver.observe(el));
-}
-
-const lrobserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("left-to-right-animate");
-    } else {
-      entry.target.classList.remove("left-to-right-animate");
-    }
-  });
-});
-
-function observeLeftToRightElements() {
-  const leftToRightElements = document.querySelectorAll(".left-right-animation");
-  leftToRightElements.forEach((el) => lrobserver.observe(el));
-}
-
-const rlobserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("right-to-left-animate");
-    } else {
-      entry.target.classList.remove("right-to-left-animate");
-    }
-  });
-});
-
-function observeRightToLeftElements() {
-  const rightToLeftElements = document.querySelectorAll(".right-left-animation");
-  rightToLeftElements.forEach((el) => rlobserver.observe(el));
 }
