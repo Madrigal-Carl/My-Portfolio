@@ -101,7 +101,8 @@ h4,
   font-size: 2.5rem;
 }
 
-.detail h1,
+.detail h1, 
+.detail span,
 .about h1,
 .about span {
   font-size: 2.5rem;
@@ -220,12 +221,35 @@ header {
   color: var(--text-blue);
 }
 
-.detail .ycolor {
+.detail .color-w {
   margin-bottom: 10px;
 }
 
 .detail p {
   margin: 30px 0;
+}
+
+.typing {
+  border-right: 2px solid var(--main-yellow);
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+}
+
+@keyframes blink {
+  0% {
+      border-right-color: var(--main-yellow);
+  }
+  50% {
+      border-right-color: transparent;
+  }
+  100% {
+      border-right-color: var(--main-yellow);
+  }
+}
+
+.typing {
+  animation: blink 0.7s step-end infinite;
 }
 /* End of Hero Section */
 
@@ -255,7 +279,7 @@ header {
 
 .skill-container {
   display: flex;
-  justify-content: space-evenly;
+  align-self: flex-start;
   gap: 2rem;
 }
 
@@ -272,7 +296,7 @@ header {
 
 .skill-card-hover:hover {
   cursor: pointer;
-  box-shadow: 1px 22px 35px -6px rgba(0, 0, 0, .5);
+  box-shadow: 1px 5px 20px 1px rgba(90, 89, 23, 0.7);
 }
 
 .skill-card img {
@@ -343,7 +367,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 2.5rem;
+  padding: 2rem;
   box-sizing: border-box;
   background-color: var(--background-card);
   transform: rotateX(-90deg);
@@ -370,7 +394,27 @@ header {
   margin: 12px 0 0;
   font-size: 10px;
   color: var(--text-medium);
-  line-height: 1.4;
+  line-height: 1.2;
+}
+
+.fullImageView {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.fullImageView img {
+  max-width: 60%;
+  max-height: 60%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 /* End of Project Section */
 
@@ -429,8 +473,15 @@ footer {
   gap: 1rem;
 }
 
-footer img {
+footer svg {
+  height: auto;
   width: 20px;
+  transition: transform 0.3s ease;
+}
+
+footer svg:hover {
+  fill: var(--main-yellow);
+  transform: scale(1.2);
 }
 
 .footer-link {
@@ -461,6 +512,12 @@ footer {
 
 .color-w {
   color: #FFFFFF;
+}
+
+.align {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 /* Start Button */
@@ -548,4 +605,29 @@ footer {
 .down-to-up-animate {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+.stagger-down-up-animation {
+  opacity: 0;
+  transform: translateY(130px) scale(0.8);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Active animation styles */
+.stagger-down-up-animate {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Delayed animations */
+[data-stagger-index="0"] {
+  transition-delay: 0s;
+}
+
+[data-stagger-index="1"] {
+  transition-delay: 0.2s;
+}
+
+[data-stagger-index="2"] {
+  transition-delay: 0.4s;
 }
