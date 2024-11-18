@@ -39,6 +39,25 @@ html {
   text-decoration: none;
 }
 
+.animated-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 10%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.8) 70%,
+    rgba(0, 0, 0, 1) 100%
+),url('images/animated_background.gif');
+  background-position: center;
+  margin-top: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pad {
+  padding: 1rem 0;
+}
+
 h1,
 h2,
 h3,
@@ -106,11 +125,6 @@ h4,
 .about h1,
 .about span {
   font-size: 2.5rem;
-}
-
-header img,
-.about img {
-  height: 380px;
 }
 
 .projects,
@@ -206,7 +220,7 @@ nav {
 /* Start of Hero Section */
 header {
   min-height: 100dvh;
-  padding: 5rem 10rem;
+  padding: 1rem 10rem;
   display: flex;
   gap: 10rem;
   align-items: center;
@@ -217,6 +231,12 @@ header {
   text-align: left;
 }
 
+header img{
+  height: 500px;
+  mask-image: linear-gradient(to bottom, #395183, #395183, #395083ec,#39508300);
+}
+
+
 .detail .bcolor {
   color: var(--text-blue);
 }
@@ -226,6 +246,7 @@ header {
 }
 
 .detail p {
+  width: 450px;
   margin: 30px 0;
 }
 
@@ -259,6 +280,10 @@ header {
   display: flex;
   gap: 10rem;
   align-items: center;
+}
+
+.about img {
+  height: 380px;
 }
 
 .about .detail p {

@@ -272,7 +272,7 @@ function showAboutMe() {
   const heroSpanName = document.getElementById("typing");
   heroSpanName.className = "color-b";
   const heroDescription = document.getElementById("heroDescription");
-  heroDescription.className = "bcolor";
+  heroDescription.className = "color-w pad";
 
   const about = document.getElementById("about");
   about.style.display = "block";
@@ -468,7 +468,7 @@ function showProjects() {
                 <span id="textAnimation-remove">Add Animation</span>
             </div>
         </a>
-    </div>
+    </div>  
 `;
 
   const showContact = document.getElementById("showContact");
@@ -513,7 +513,9 @@ function showContacts() {
   hero.id = "dynamicText";
   hero.className = "typing";
 
-  typeText(["Carl S. Madrigal", "Web Developer", "Software Developer"]);
+  typeText(["Carl S. Madrigal", "Web Developer", "Software Developer", "Game Developer"]);
+  const head = document.getElementById("hero");
+  head.classList.add("animated-bg");
 
   document.querySelectorAll(".leftToRight-anim").forEach((about) => {
     about.classList.add("left-right-animation");
