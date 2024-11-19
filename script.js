@@ -437,7 +437,7 @@ function showProjects() {
     div.className = "project-card cursor";
 
     div.innerHTML = `
-        <div class="card popup downToUp-anim" onclick="fullView('images/${element.image}')">
+        <div class="card popup staggerExpand-anim" onclick="fullView('images/${element.image}')">
             <img src="images/${element.image}" alt="${element.name}">
             <div class="card_content">
                 <p class="card_title">${element.name}</p>
@@ -529,6 +529,10 @@ function showContacts() {
     about.classList.add("stagger-down-up-animation");
   });
 
+  document.querySelectorAll(".staggerExpand-anim").forEach((about) => {
+    about.classList.add("stagger-expand-animation");
+  });
+
   document.querySelectorAll(".downToUp-anim").forEach((about) => {
     about.classList.add("down-up-animation");
   });
@@ -571,6 +575,7 @@ function showContacts() {
   observeRightToLeftElements();
   observeDownToUpElements();
   observeStaggerDownUpElements();
+  observeStaggerExpandElements();
 
   showFooter();
 }
@@ -664,3 +669,21 @@ function observeStaggerDownUpElements() {
   });
 }
 
+const staggerExpandObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("stagger-expand-animate");
+    } else {
+      entry.target.classList.remove("stagger-expand-animate");
+    }
+  });
+});
+
+function observeStaggerExpandElements() {
+  const staggerElements = document.querySelectorAll(".stagger-expand-animation");
+  
+  staggerElements.forEach((el, index) => {
+    el.setAttribute("expand-stagger-index", index);
+    staggerExpandObserver.observe(el);
+  });
+}
